@@ -2,14 +2,16 @@ import {Avatar, Button, Typography} from 'antd';
 import {UserOutlined, EditOutlined, ManOutlined, WomanOutlined} from '@ant-design/icons';
 import {HeaderProps} from '../types';
 import TONLOGO from '../assets/ton.png';
-import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = ({user,profile} : HeaderProps) => {
     const {Text} = Typography;
+
+    const navigate = useNavigate();
     
     const handleProfileEdit = () => {
-      return redirect('/profile')
+      navigate('/profile')
     }
 
     return(
