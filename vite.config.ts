@@ -9,5 +9,5 @@ export default defineConfig({
   build: {
     outDir: "./docs",
   },
-  base: "/client-date/",
+  base: "/client-date",
 });
