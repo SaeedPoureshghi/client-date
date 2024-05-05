@@ -1,5 +1,5 @@
 {
-  "name": "vite-boilerplate",
+  "name": "persian-connect",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.6",
+    "@ton/core": "^0.56.3",
+    "@ton/crypto": "^3.2.0",
+    "@ton/ton": "^13.11.1",
+    "@tonconnect/ui-react": "^2.0.2",
     "@twa-dev/sdk": "^6.7.1",
     "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "antd": "^5.16.2",
+    "axios": "^1.6.8",
+    "buffer": "^6.0.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
