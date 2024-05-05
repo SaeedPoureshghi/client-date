@@ -1,6 +1,6 @@
 // import React from 'react';
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import {createHashRouter,RouterProvider } from 'react-router-dom'
 import Home from './screens/Home'
 import CreateProfile from './screens/CreateProfile'
 import UserProfile from './screens/UserProfile'
@@ -17,7 +17,31 @@ WebApp.ready();
 WebApp.expand();
 
  
-const router = createBrowserRouter([
+// const router = createBrowserRouter([
+//   {
+//   path: "/",
+//   element: <Splash />,
+//   },
+// {
+// path: "home",
+// element: <Home />,
+// },
+// {
+//   path: "create",
+//   element: <CreateProfile/>
+// }
+// ,
+// {
+//   path: "profile",
+//   element: <UserProfile/>
+// },
+// {
+//   path: "profile/:id",
+//   element: <OtherProfile/>
+// }
+// ],{basename: "/client-date"})
+
+const router = createHashRouter([
   {
   path: "/",
   element: <Splash />,
