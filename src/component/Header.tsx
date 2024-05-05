@@ -9,7 +9,7 @@ const Header = ({user,profile} : HeaderProps) => {
     const {Text} = Typography;
     
     const handleProfileEdit = () => {
-      redirect('/profile')
+      return redirect('/profile')
     }
 
     return(
