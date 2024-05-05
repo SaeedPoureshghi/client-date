@@ -39,6 +39,9 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        env:
+          VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }},
+          VITE_OWNER_WALLET: ${{ secrets.VITE_OWNER_WALLET}}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
