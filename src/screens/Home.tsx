@@ -6,7 +6,7 @@ import WebApp from '@twa-dev/sdk'
 import {MainButton} from '@twa-dev/sdk/react'
 import {beginCell,toNano} from '@ton/ton'
 import {useTonAddress} from '@tonconnect/ui-react'
-import {Typography} from 'antd'
+import {Skeleton, Typography} from 'antd'
 import ProfileList from '../component/ProfileList'
 import useUser from '../hooks/useUser'
 
@@ -56,7 +56,16 @@ function sendInvoice(_id: string) {
 }
 
 if (loading) {
-  return <div>Loading...</div>
+  return (
+    <>
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    </>
+  )
 }
   
 if (user && profile && meta && meta.fee) 
