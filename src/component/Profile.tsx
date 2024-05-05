@@ -17,12 +17,12 @@ const Profile:React.FC<ProfileProps> = (props: ProfileProps) => {
      
      cover={props.pic === "" ?
             <img
-            alt="example"
-            src={props.pic}
+            alt={props.nickname}
+            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
             />:
             <img
-            alt="example"
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            alt={props.nickname}
+            src={props.pic}
             />
      }
     actions={[
