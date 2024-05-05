@@ -17,7 +17,10 @@ const Header = ({user,profile} : HeaderProps) => {
             <Text strong>{profile.nickname} {profile.gender === 'MALE' ? <ManOutlined style={{color: "#1677ff"}}/>:<WomanOutlined style={{color:"#eb2f96"}}/>}</Text>
             <Button icon={<EditOutlined />} type="link" onClick={() => console.log('clicked')}></Button>
             </div>
-            <Text type="secondary">@{user.username}</Text>
+            {
+              user && user.username &&
+              <Text type="secondary">@{user.username}</Text>
+            }
           </div>
 
           <div className="profile_balance">
