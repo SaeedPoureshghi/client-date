@@ -21,7 +21,7 @@ const ProfileList = () => {
         {profiles && !loadingProfiles &&
           <Row gutter={[16,16]}>        
           {profiles.map((item,index) => 
-            <Col span={24} key={index}>
+            <Col span={12} key={index}>
           <Profile key={index} gender={item.gender} nickname={item.nickname} age={item.age} city={item.city} pic={item.pic}/>
             </Col>
           )}
