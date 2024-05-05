@@ -39,7 +39,7 @@ element: <Home />,
   path: "profile/:id",
   element: <OtherProfile/>
 }
-],{basename: "/persian-connect"})
+],{basename: "/client-date"})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   
