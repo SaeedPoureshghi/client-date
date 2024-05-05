@@ -43,10 +43,10 @@ element: <Home />,
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   
-  <TonConnectUIProvider manifestUrl='https://saeedpoureshghi.github.io/telegram-mini-app-numberspuzzle/tonconnect-manifest.json' 
+  <TonConnectUIProvider manifestUrl='https://saeedpoureshghi.github.io/client-date/tonconnect-manifest.json' 
   actionsConfiguration={
     {
-      twaReturnUrl:'https://192.168.1.7:5173/persian-connect',
+      twaReturnUrl:'https://saeedpoureshghi.github.io/client-date/',
     }
   }
   >
