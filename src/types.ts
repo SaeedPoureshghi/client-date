@@ -36,6 +36,8 @@ export interface ProfileProps {
   gender: string;
   city: string;
   pic: string;
+  handleProfileView?: () => void;
+  handleSendMessage?: () => void;
 }
 export interface HeaderProps {
   user: User;

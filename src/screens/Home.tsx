@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {useState} from 'react'
 import Header from '../component/Header'
 import '../App.css'
@@ -72,9 +73,9 @@ if (user && profile && meta && meta.fee)
   return (
     <div className="main_container">
         <Header user={user} profile={profile}/>
-        {/* <ProfileList /> */}
+        <ProfileList balance={profile.balance} fee={meta.fee}/>
        
-         {profile.balance < meta.fee && 
+         {/* {profile.balance < meta.fee && 
           <div
           style={{
            marginTop: '10rem',
@@ -111,8 +112,8 @@ if (user && profile && meta && meta.fee)
         }
         
         {profile.balance >= meta.fee &&
-        <ProfileList/>
-        }
+        <ProfileList balance={profile.balance} fee={meta.fee}/>
+        } */}
     </div>
   )
 }

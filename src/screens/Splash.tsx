@@ -35,7 +35,7 @@ const Splash = () => {
           lastname: user?.last_name,
           language_code: user?.language_code,
           is_premium: user?.is_premium,
-          gender: undefined,
+          gender: "MALE",
           city: undefined
         }
         

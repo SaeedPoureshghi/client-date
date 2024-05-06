@@ -1,10 +1,29 @@
-
+import {useState} from 'react'
 import useProfileList from '../hooks/useProfileList'
-import {Row,Col,Skeleton} from 'antd'
+import {Row,Col,Skeleton, Modal} from 'antd'
 import Profile from './Profile'
 
-const ProfileList = () => {
+interface Props {
+  balance: number,
+  fee: number
+}
+const ProfileList = ({balance,fee} : Props) => {
     const {loadingProfiles,profiles} = useProfileList({page: 1})
+
+    const [isDepositModalOpen,setIsDepositModalOpen] = useState(false)
+
+    const handleProdileView = () => {
+      if (balance < fee) {
+        setIsDepositModalOpen(true)
+      }
+    }
+
+    const handlesendMessage = () => {
+        if (balance < fee) {
+          setIsDepositModalOpen(true)
+        }
+    }
+
     return(
         <div className="profile-list">
 
@@ -22,12 +41,21 @@ const ProfileList = () => {
           <Row gutter={[16,16]}>        
           {profiles.map((item,index) => 
             <Col span={12} key={index}>
-          <Profile key={index} gender={item.gender} nickname={item.nickname} age={item.age} city={item.city} pic={item.pic}/>
+          <Profile handleProfileView={handleProdileView} handleSendMessage={handlesendMessage} key={index} gender={item.gender} nickname={item.nickname} age={item.age} city={item.city} pic={item.pic}/>
             </Col>
           )}
           </Row>
        
         }
+
+        <Modal
+          title="Deposit"
+          open={isDepositModalOpen}
+          onOk={() => setIsDepositModalOpen(false)}
+          onCancel={() => setIsDepositModalOpen(false)}
+        >
+          <p>Your balance is low. Please deposit to continue</p>
+        </Modal>
         </div>
     )
 }

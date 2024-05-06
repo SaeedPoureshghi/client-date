@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Typography} from 'antd';
+import {Card, Typography, Button} from 'antd';
 import {EyeOutlined, MessageOutlined,ManOutlined, WomanOutlined} from '@ant-design/icons';
 import {ProfileProps} from '../types';
 
@@ -26,8 +26,8 @@ const Profile:React.FC<ProfileProps> = (props: ProfileProps) => {
             />
      }
     actions={[
-        <EyeOutlined key="viewprofile" />,
-        <MessageOutlined key="sendmessage"/> 
+        <Button type="link" key="viewprofile" onClick={props.handleProfileView}><EyeOutlined  /></Button>,
+        <Button type="link" key="sendmessage" onClick={props.handleSendMessage}><MessageOutlined /></Button> 
     ]
     }
     >
