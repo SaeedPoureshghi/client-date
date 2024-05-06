@@ -131,9 +131,10 @@ const UserProfile = () => {
             </Button>
           </Form.Item>
           <Button
-           type="default"
+           type="link"
            icon={<LeftOutlined />}
            onClick={() => navigate('/home')}
+           style={{width:"100%"}}
           >Back to Home</Button>
         </Form>
       </div>
