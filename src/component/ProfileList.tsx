@@ -2,6 +2,7 @@ import {useState} from 'react'
 import useProfileList from '../hooks/useProfileList'
 import {Row,Col,Skeleton, Modal} from 'antd'
 import Profile from './Profile'
+import {useNavigate} from 'react-router-dom'
 
 interface Props {
   balance: number,
@@ -11,16 +12,19 @@ const ProfileList = ({balance,fee} : Props) => {
     const {loadingProfiles,profiles} = useProfileList({page: 1})
 
     const [isDepositModalOpen,setIsDepositModalOpen] = useState(false)
+    const navigate = useNavigate()
 
     const handleProdileView = () => {
       if (balance < fee) {
-        setIsDepositModalOpen(true)
+        // setIsDepositModalOpen(true)
+        navigate('/deposit')
       }
     }
 
     const handlesendMessage = () => {
         if (balance < fee) {
-          setIsDepositModalOpen(true)
+          // setIsDepositModalOpen(true)
+          navigate('/deposit')
         }
     }
 

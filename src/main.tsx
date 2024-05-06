@@ -12,6 +12,7 @@ import Splash from './screens/Splash'
 
 import WebApp from '@twa-dev/sdk'
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import Deposit from './screens/Deposit'
 
 WebApp.ready();
 WebApp.expand();
@@ -38,6 +39,10 @@ element: <Home />,
 {
   path: "profile/:id",
   element: <OtherProfile/>
+},
+{
+  path: "deposit",
+  element: <Deposit/>
 }
 ],{basename: "/client-date"})
 
