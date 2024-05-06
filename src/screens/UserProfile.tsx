@@ -14,14 +14,17 @@ import {
 
 } from "antd";
 import axios from "axios";
-import { UserOutlined , CalendarOutlined ,UserAddOutlined} from "@ant-design/icons";
+import { UserOutlined , CalendarOutlined ,UserAddOutlined, LeftOutlined} from "@ant-design/icons";
 import { ProfileType , CityOptions} from "../types";
+import { useNavigate } from "react-router-dom";
 
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 const UserProfile = () => {
   const initData = WebApp.initDataUnsafe;
+
+  const navigate = useNavigate();
 
   const { user, profile, loading } = useUser({ initData: initData });
 
@@ -95,6 +98,7 @@ const UserProfile = () => {
             <InputNumber
               min={18}
               max={70}
+              value={profile.age}
               prefix={<CalendarOutlined style={{ color: "#bfbfbf" }} />}
               placeholder="Age"
             />
@@ -123,9 +127,14 @@ const UserProfile = () => {
               type="primary"
               className="login-form-button"
             >
-              Create Profile
+              Update Profile
             </Button>
           </Form.Item>
+          <Button
+           type="default"
+           icon={<LeftOutlined />}
+           onClick={() => navigate('/home')}
+          >Back to Home</Button>
         </Form>
       </div>
         )
