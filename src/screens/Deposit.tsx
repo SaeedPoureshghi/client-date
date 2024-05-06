@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTonConnectUI, useTonAddress,SendTransactionRequest,TonConnectButton } from "@tonconnect/ui-react";
-import { Button, Typography } from "antd";
+import { Button, Skeleton, Typography } from "antd";
 import WebApp from "@twa-dev/sdk";
 import { beginCell, toNano } from "@ton/ton";
 import useUser from "../hooks/useUser";
@@ -47,6 +47,7 @@ const Deposit = () => {
     }
   }
   if (user && profile && meta && meta.fee) 
+  {
   return (
     <div className="main_container">
         <Header user={user} profile={profile}/>
@@ -97,6 +98,16 @@ const Deposit = () => {
         
        
     </div>
+  )}
+
+  return(
+    <>
+    <Skeleton active/>
+    <Skeleton active/>
+    <Skeleton active/>
+    <Skeleton active/>
+    <Skeleton active/>
+    </>
   )
 };
 export default Deposit;
